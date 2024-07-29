@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="SpacerForRail" type="HSeparator"]
+margin_top = 108.0
+margin_right = 1046.0
+margin_bottom = 132.0
+custom_constants/separation = 24

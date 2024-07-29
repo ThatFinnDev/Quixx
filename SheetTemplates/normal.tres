@@ -1,0 +1,61 @@
+[gd_resource type="Resource" load_steps=12 format=2]
+
+[ext_resource path="res://Scripts/RailTemplate.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/RailTemplateData.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/RailEntryCreatorData.gd" type="Script" id=3]
+
+[sub_resource type="Resource" id=5]
+script = ExtResource( 3 )
+color = Color( 1, 0.0627451, 0.0627451, 1 )
+count = 11
+customNumbers = PoolIntArray(  )
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 2 )
+creatorData = [ SubResource( 5 ) ]
+reverseLayout = false
+makeLock = true
+
+[sub_resource type="Resource" id=6]
+script = ExtResource( 3 )
+color = Color( 1, 1, 0, 1 )
+count = 11
+customNumbers = PoolIntArray(  )
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 2 )
+creatorData = [ SubResource( 6 ) ]
+reverseLayout = false
+makeLock = true
+
+[sub_resource type="Resource" id=7]
+script = ExtResource( 3 )
+color = Color( 0.14902, 1, 0, 1 )
+count = 11
+customNumbers = PoolIntArray(  )
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 2 )
+creatorData = [ SubResource( 7 ) ]
+reverseLayout = true
+makeLock = true
+
+[sub_resource type="Resource" id=8]
+script = ExtResource( 3 )
+color = Color( 0, 0.490196, 1, 1 )
+count = 11
+customNumbers = PoolIntArray(  )
+
+[sub_resource type="Resource" id=4]
+script = ExtResource( 2 )
+creatorData = [ SubResource( 8 ) ]
+reverseLayout = true
+makeLock = true
+
+[resource]
+script = ExtResource( 1 )
+railTemplateDatas = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ]
+maxFailButtons = 4
+useLuckNumbers = false
+combineLastTwo = false
+name = "Normal"

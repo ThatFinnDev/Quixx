@@ -1,0 +1,1118 @@
+[gd_scene load_steps=38 format=2]
+
+[ext_resource path="res://Fonts/200-Font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Icons/icon.png" type="Texture" id=2]
+[ext_resource path="res://Fonts/50-Font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Themes/light.tres" type="Theme" id=4]
+[ext_resource path="res://Fonts/40-Font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Fonts/100-Font.tres" type="DynamicFont" id=6]
+[ext_resource path="res://SheetTemplates/normal.tres" type="Resource" id=7]
+[ext_resource path="res://SheetTemplates/mixed.tres" type="Resource" id=8]
+[ext_resource path="res://SheetTemplates/longo.tres" type="Resource" id=9]
+[ext_resource path="res://SheetTemplates/mixed2.tres" type="Resource" id=10]
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=11]
+[ext_resource path="res://Fonts/62-Font.tres" type="DynamicFont" id=12]
+[ext_resource path="res://Fonts/30-Font.tres" type="DynamicFont" id=13]
+[ext_resource path="res://Fonts/80-Font.tres" type="DynamicFont" id=14]
+[ext_resource path="res://Textures/fullscreen.png" type="Texture" id=15]
+[ext_resource path="res://Prefabs/LayoutCreator.tscn" type="PackedScene" id=16]
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.521569, 0.329412, 0.329412, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.160784, 0.192157, 0.141176, 1 )
+
+[sub_resource type="StyleBoxTexture" id=36]
+
+[sub_resource type="StyleBoxFlat" id=25]
+bg_color = Color( 0, 0, 0, 0.294118 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=26]
+bg_color = Color( 0.164706, 0.172549, 0.211765, 1 )
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 408, 408 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 1, 1, 1, 1 )
+draw_center = false
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Title:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "Quixx" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Panel:custom_styles/panel:draw_center")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Panel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Start"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Title:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "Q", "Qu", "Qui", "Quix", "Quixx" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Panel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Panel:custom_styles/panel:draw_center")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.24, 0.36, 0.43, 0.53, 0.63, 0.71, 0.84, 0.92, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false, true, false, true, false, true, false ]
+}
+
+[sub_resource type="Gradient" id=19]
+offsets = PoolRealArray( 0.127049, 0.405738, 0.614754, 0.92623 )
+colors = PoolColorArray( 0.188235, 0.188235, 0.298039, 1, 0.4, 0.270588, 0.129412, 1, 0.4, 0.270588, 0.129412, 1, 0.505882, 0.635294, 0.415686, 1 )
+
+[sub_resource type="GradientTexture" id=20]
+gradient = SubResource( 19 )
+
+[sub_resource type="StyleBoxTexture" id=21]
+texture = SubResource( 20 )
+region_rect = Rect2( 0, 0, 2048, 1 )
+
+[sub_resource type="StyleBoxTexture" id=18]
+
+[sub_resource type="StyleBoxFlat" id=27]
+bg_color = Color( 0.188235, 0.188235, 0.298039, 1 )
+
+[sub_resource type="StyleBoxFlat" id=28]
+bg_color = Color( 0.4, 0.270588, 0.129412, 1 )
+
+[sub_resource type="StyleBoxFlat" id=29]
+bg_color = Color( 0.505882, 0.635294, 0.415686, 1 )
+
+[sub_resource type="StyleBoxFlat" id=34]
+bg_color = Color( 0.737255, 0.737255, 0.737255, 1 )
+corner_radius_top_left = 50
+
+[sub_resource type="StyleBoxFlat" id=35]
+bg_color = Color( 0.470588, 0.470588, 0.470588, 1 )
+corner_radius_top_left = 50
+
+[sub_resource type="StyleBoxFlat" id=32]
+bg_color = Color( 0.109804, 0.52549, 0.92549, 1 )
+corner_radius_top_left = 50
+expand_margin_left = 1.0
+expand_margin_right = 1.0
+expand_margin_top = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id=33]
+bg_color = Color( 0.109804, 0.52549, 0.92549, 1 )
+corner_radius_top_left = 50
+
+[sub_resource type="StyleBoxFlat" id=37]
+bg_color = Color( 0.192157, 0.141176, 0.141176, 1 )
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -210.0 ]
+}
+defaultTemplates = [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 9 ) ]
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="Settings" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background" type="Panel" parent="Settings"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -5.0
+margin_right = -5.0
+custom_styles/panel = SubResource( 13 )
+
+[node name="Top" type="HBoxContainer" parent="Settings"]
+anchor_top = 0.03
+anchor_right = 1.0
+anchor_bottom = 0.152
+margin_top = 0.280001
+margin_bottom = -0.248009
+alignment = 1
+
+[node name="Title" type="Label" parent="Settings/Top"]
+margin_left = 466.0
+margin_right = 1000.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 6 )
+text = "Settings"
+align = 1
+valign = 1
+
+[node name="Back" type="Button" parent="Settings"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = -119.0
+margin_right = 295.0
+margin_bottom = -15.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
+text = "Back"
+
+[node name="ShowNumbersOnDice" type="Control" parent="Settings"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -645.0
+margin_top = 145.0
+margin_right = 645.0
+margin_bottom = 220.0
+
+[node name="CheckBox" type="CheckBox" parent="Settings/ShowNumbersOnDice"]
+anchor_bottom = 1.0
+margin_left = -0.5
+margin_right = 19.5
+margin_bottom = -55.0
+rect_scale = Vector2( 3.75, 3.75 )
+pressed = true
+
+[node name="Label" type="Label" parent="Settings/ShowNumbersOnDice"]
+anchor_left = 0.057
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.530006
+margin_right = 1.0
+custom_fonts/font = ExtResource( 5 )
+text = "sHOW nUMBERS oN dICE"
+valign = 1
+
+[node name="Create" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background" type="Panel" parent="Create"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 9 )
+
+[node name="Back" type="Button" parent="Create"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = -119.0
+margin_right = 295.0
+margin_bottom = -15.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
+text = "Back"
+
+[node name="ButtonsRowOne" type="HBoxContainer" parent="Create"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -110.0
+margin_bottom = -10.0
+size_flags_horizontal = 13
+size_flags_vertical = 13
+alignment = 1
+
+[node name="CreateNew" type="Button" parent="Create/ButtonsRowOne"]
+margin_left = 134.0
+margin_right = 684.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 550, 100 )
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
+text = "Create New"
+
+[node name="VSeparator" type="VSeparator" parent="Create/ButtonsRowOne"]
+margin_left = 688.0
+margin_right = 778.0
+margin_bottom = 100.0
+custom_constants/separation = 90
+custom_styles/separator = SubResource( 36 )
+
+[node name="ModifyExisting" type="Button" parent="Create/ButtonsRowOne"]
+margin_left = 782.0
+margin_right = 1332.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 550, 100 )
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
+text = "Modify Existing"
+
+[node name="ButtonsRowTwo" type="HBoxContainer" parent="Create"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = 10.0
+margin_bottom = 110.0
+size_flags_horizontal = 13
+size_flags_vertical = 13
+alignment = 1
+
+[node name="ManageLevels" type="Button" parent="Create/ButtonsRowTwo"]
+margin_left = 134.0
+margin_right = 684.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 550, 100 )
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
+text = "Manage Levels"
+
+[node name="VSeparator" type="VSeparator" parent="Create/ButtonsRowTwo"]
+margin_left = 688.0
+margin_right = 778.0
+margin_bottom = 100.0
+custom_constants/separation = 90
+custom_styles/separator = SubResource( 36 )
+
+[node name="ImportLevel" type="Button" parent="Create/ButtonsRowTwo"]
+margin_left = 782.0
+margin_right = 1332.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 550, 100 )
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
+text = "Import level"
+
+[node name="Top" type="HBoxContainer" parent="Create"]
+anchor_top = 0.03
+anchor_right = 1.0
+anchor_bottom = 0.152
+margin_top = 0.280001
+margin_bottom = -0.248009
+alignment = 1
+
+[node name="Title" type="Label" parent="Create/Top"]
+margin_left = 530.0
+margin_right = 936.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 6 )
+text = "Create"
+align = 1
+valign = 1
+
+[node name="ModifyExisting" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background" type="Panel" parent="ModifyExisting"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 9 )
+
+[node name="Back" type="Button" parent="ModifyExisting"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = -119.0
+margin_right = 295.0
+margin_bottom = -15.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
+text = "Back"
+
+[node name="Save" type="Button" parent="ModifyExisting"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -300.0
+margin_top = -124.0
+margin_right = -20.0
+margin_bottom = -20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
+text = "Save"
+
+[node name="Top" type="HBoxContainer" parent="ModifyExisting"]
+anchor_top = 0.03
+anchor_right = 1.0
+anchor_bottom = 0.152
+margin_top = 0.280001
+margin_bottom = -0.248009
+alignment = 1
+
+[node name="Title" type="Label" parent="ModifyExisting/Top"]
+margin_left = 239.0
+margin_right = 1228.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 6 )
+text = "Modify Existing"
+align = 1
+valign = 1
+
+[node name="SelectThing" type="ScrollContainer" parent="ModifyExisting"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -550.0
+margin_top = -262.5
+margin_right = 550.0
+margin_bottom = 262.5
+custom_styles/bg = SubResource( 25 )
+
+[node name="Container" type="VBoxContainer" parent="ModifyExisting/SelectThing"]
+margin_right = 1100.0
+size_flags_horizontal = 3
+
+[node name="Manage" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background" type="Panel" parent="Manage"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 9 )
+
+[node name="Back" type="Button" parent="Manage"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = -119.0
+margin_right = 295.0
+margin_bottom = -15.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
+text = "Back"
+
+[node name="Top" type="HBoxContainer" parent="Manage"]
+anchor_top = 0.03
+anchor_right = 1.0
+anchor_bottom = 0.152
+margin_top = 0.280001
+margin_bottom = -0.248009
+alignment = 1
+
+[node name="Title" type="Label" parent="Manage/Top"]
+margin_left = 512.0
+margin_right = 954.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 6 )
+text = "Manage"
+align = 1
+valign = 1
+
+[node name="SelectThing" type="ScrollContainer" parent="Manage"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -550.0
+margin_top = -262.5
+margin_right = 550.0
+margin_bottom = 262.5
+custom_styles/bg = SubResource( 25 )
+
+[node name="Container" type="VBoxContainer" parent="Manage/SelectThing"]
+margin_right = 1100.0
+size_flags_horizontal = 3
+
+[node name="Import" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background" type="Panel" parent="Import"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 9 )
+
+[node name="Back" type="Button" parent="Import"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = -119.0
+margin_right = 295.0
+margin_bottom = -15.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
+text = "Back"
+
+[node name="Import" type="Button" parent="Import"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -300.0
+margin_top = -124.0
+margin_right = -20.0
+margin_bottom = -20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
+text = "Import"
+
+[node name="Top" type="HBoxContainer" parent="Import"]
+anchor_top = 0.03
+anchor_right = 1.0
+anchor_bottom = 0.152
+margin_top = 0.280001
+margin_bottom = -0.248009
+alignment = 1
+
+[node name="Title" type="Label" parent="Import/Top"]
+margin_left = 519.0
+margin_right = 947.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 6 )
+text = "Import"
+align = 1
+valign = 1
+
+[node name="TextEdit" type="TextEdit" parent="Import"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -650.0
+margin_top = -251.0
+margin_right = 650.0
+margin_bottom = 251.0
+
+[node name="CreateNew" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background" type="Panel" parent="CreateNew"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 9 )
+
+[node name="Back" type="Button" parent="CreateNew"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = -119.0
+margin_right = 295.0
+margin_bottom = -15.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
+text = "Back"
+
+[node name="Add" type="Button" parent="CreateNew"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -300.0
+margin_top = -124.0
+margin_right = -20.0
+margin_bottom = -20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
+text = "Add"
+
+[node name="Top" type="HBoxContainer" parent="CreateNew"]
+anchor_top = 0.03
+anchor_right = 1.0
+anchor_bottom = 0.152
+margin_top = 0.280001
+margin_bottom = -0.248009
+alignment = 1
+
+[node name="Title" type="Label" parent="CreateNew/Top"]
+margin_left = 407.0
+margin_right = 1059.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 6 )
+text = "Create new"
+align = 1
+valign = 1
+
+[node name="LayoutCreator" parent="CreateNew" instance=ExtResource( 16 )]
+
+[node name="Main" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background" type="Panel" parent="Main"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 26 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -50.0
+
+[node name="Label" type="Label" parent="Main/HBoxContainer"]
+margin_right = 271.0
+margin_bottom = 50.0
+custom_fonts/font = ExtResource( 3 )
+text = "Ver: 1.4.7"
+valign = 2
+
+[node name="Latest" type="Label" parent="Main/HBoxContainer"]
+margin_left = 275.0
+margin_top = 10.0
+margin_right = 275.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 30 )
+custom_fonts/font = ExtResource( 13 )
+
+[node name="Top" type="HBoxContainer" parent="Main"]
+anchor_top = 0.03
+anchor_right = 1.0
+anchor_bottom = 0.273
+margin_top = 0.279999
+margin_bottom = 0.0480042
+alignment = 1
+
+[node name="IconLeft" type="Panel" parent="Main/Top"]
+margin_left = 174.0
+margin_right = 374.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="Title" type="Label" parent="Main/Top"]
+margin_left = 378.0
+margin_right = 1089.0
+margin_bottom = 200.0
+custom_fonts/font = ExtResource( 1 )
+text = "Quixx"
+align = 1
+valign = 1
+
+[node name="Panel" type="Panel" parent="Main/Top"]
+visible = false
+margin_left = 1007.0
+margin_right = 1027.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 20, 0 )
+custom_styles/panel = SubResource( 8 )
+
+[node name="IconRight" type="Panel" parent="Main/Top"]
+margin_left = 1093.0
+margin_right = 1293.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Main/Top"]
+playback_speed = 0.6
+anims/RESET = SubResource( 7 )
+anims/Start = SubResource( 6 )
+
+[node name="Middle" type="VBoxContainer" parent="Main"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -202.0
+margin_top = -94.645
+margin_right = 202.0
+margin_bottom = 294.355
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Play" type="Button" parent="Main/Middle"]
+margin_right = 404.0
+margin_bottom = 126.0
+rect_pivot_offset = Vector2( 1146, 259 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 3 )
+text = "Play"
+icon_align = 1
+expand_icon = true
+
+[node name="Create" type="Button" parent="Main/Middle"]
+margin_top = 130.0
+margin_right = 404.0
+margin_bottom = 257.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 3 )
+text = "Create"
+
+[node name="Settings" type="Button" parent="Main/Middle"]
+margin_top = 261.0
+margin_right = 404.0
+margin_bottom = 388.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 3 )
+text = "Settings"
+
+[node name="Play" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background" type="Panel" parent="Play"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 21 )
+
+[node name="Top" type="HBoxContainer" parent="Play"]
+anchor_top = 0.03
+anchor_right = 1.0
+anchor_bottom = 0.152
+margin_top = 0.279999
+margin_bottom = -0.248009
+theme = ExtResource( 4 )
+alignment = 1
+
+[node name="Title" type="Label" parent="Play/Top"]
+margin_left = 378.0
+margin_right = 1089.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 6 )
+text = "Game Select"
+align = 1
+valign = 1
+
+[node name="Middle" type="HBoxContainer" parent="Play"]
+anchor_left = 0.057
+anchor_top = 0.47
+anchor_right = 0.943
+anchor_bottom = 0.591
+margin_left = -0.119003
+margin_top = -0.280029
+margin_right = 0.119019
+margin_bottom = 0.0159912
+theme = ExtResource( 4 )
+alignment = 1
+
+[node name="DiceOnly" type="Button" parent="Play/Middle"]
+margin_right = 394.0
+margin_bottom = 100.0
+rect_pivot_offset = Vector2( 1146, 259 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 3 )
+text = "Dice Only"
+icon_align = 1
+expand_icon = true
+
+[node name="VSeparator2" type="VSeparator" parent="Play/Middle"]
+margin_left = 398.0
+margin_right = 448.0
+margin_bottom = 100.0
+custom_constants/separation = 50
+custom_styles/separator = SubResource( 18 )
+
+[node name="VirtualDice" type="Button" parent="Play/Middle"]
+margin_left = 452.0
+margin_right = 847.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 3 )
+text = "Virtual Dice"
+
+[node name="VSeparator3" type="VSeparator" parent="Play/Middle"]
+margin_left = 851.0
+margin_right = 901.0
+margin_bottom = 100.0
+custom_constants/separation = 50
+custom_styles/separator = SubResource( 18 )
+
+[node name="Normal" type="Button" parent="Play/Middle"]
+margin_left = 905.0
+margin_right = 1300.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 3 )
+text = "Normal"
+
+[node name="PlaySaved" type="Button" parent="Play"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -130.0
+margin_top = 98.0
+margin_right = 130.0
+margin_bottom = 198.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 3 )
+text = "Saves"
+
+[node name="Back" type="Button" parent="Play"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = -119.0
+margin_right = 295.0
+margin_bottom = -15.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
+text = "Back"
+
+[node name="Main" type="VBoxContainer" parent="Play"]
+visible = false
+anchor_top = 0.294
+anchor_bottom = 0.753
+margin_top = -0.255997
+margin_right = 451.0
+margin_bottom = -288.472
+size_flags_horizontal = 3
+theme = ExtResource( 4 )
+
+[node name="UseVirtualDices" type="CheckBox" parent="Play/Main"]
+margin_right = 451.0
+margin_bottom = 45.0
+theme = ExtResource( 4 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover_pressed = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Use Virtual Dices"
+expand_icon = true
+
+[node name="SelectSheet" type="MenuButton" parent="Play/Main"]
+margin_top = 49.0
+margin_right = 451.0
+margin_bottom = 90.0
+focus_mode = 2
+theme = ExtResource( 4 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = " Select Sheet"
+align = 0
+
+[node name="DiceOnly" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background" type="Panel" parent="DiceOnly"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 27 )
+
+[node name="Top" type="HBoxContainer" parent="DiceOnly"]
+anchor_top = 0.03
+anchor_right = 1.0
+anchor_bottom = 0.152
+margin_top = 0.279999
+margin_bottom = -0.248009
+theme = ExtResource( 4 )
+alignment = 1
+
+[node name="Title" type="Label" parent="DiceOnly/Top"]
+margin_left = 554.0
+margin_top = 18.0
+margin_right = 912.0
+margin_bottom = 81.0
+custom_fonts/font = ExtResource( 12 )
+text = "Dice Only"
+align = 1
+valign = 1
+
+[node name="BackToPlay" type="Button" parent="DiceOnly"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = -119.0
+margin_right = 295.0
+margin_bottom = -15.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
+text = "Back"
+
+[node name="VirtualDice" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background" type="Panel" parent="VirtualDice"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 28 )
+
+[node name="Top" type="HBoxContainer" parent="VirtualDice"]
+anchor_top = 0.03
+anchor_right = 1.0
+anchor_bottom = 0.152
+margin_top = 0.279999
+margin_bottom = -0.248009
+theme = ExtResource( 4 )
+alignment = 1
+
+[node name="Title" type="Label" parent="VirtualDice/Top"]
+margin_left = 492.0
+margin_top = 18.0
+margin_right = 974.0
+margin_bottom = 81.0
+custom_fonts/font = ExtResource( 12 )
+text = "Virtual Dice"
+align = 1
+valign = 1
+
+[node name="BackToPlay" type="Button" parent="VirtualDice"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = -119.0
+margin_right = 295.0
+margin_bottom = -15.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
+text = "Back"
+
+[node name="Normal" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background" type="Panel" parent="Normal"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 29 )
+
+[node name="Top" type="HBoxContainer" parent="Normal"]
+anchor_top = 0.03
+anchor_right = 1.0
+anchor_bottom = 0.152
+margin_top = 0.279999
+margin_bottom = -0.248009
+theme = ExtResource( 4 )
+alignment = 1
+
+[node name="Title" type="Label" parent="Normal/Top"]
+margin_left = 593.0
+margin_top = 18.0
+margin_right = 873.0
+margin_bottom = 81.0
+custom_fonts/font = ExtResource( 12 )
+text = "Normal"
+align = 1
+valign = 1
+
+[node name="BackToPlay" type="Button" parent="Normal"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = -119.0
+margin_right = 295.0
+margin_bottom = -15.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
+text = "Back"
+
+[node name="SelectThing" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="SelectThing" type="ScrollContainer" parent="SelectThing"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -550.0
+margin_top = -262.5
+margin_right = 550.0
+margin_bottom = 262.5
+custom_styles/bg = SubResource( 25 )
+
+[node name="Container" type="VBoxContainer" parent="SelectThing/SelectThing"]
+margin_right = 1100.0
+size_flags_horizontal = 3
+
+[node name="Fullscreen" type="Button" parent="."]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -110.0
+margin_top = -110.0
+rect_min_size = Vector2( 110, 0 )
+rect_pivot_offset = Vector2( 1146, 259 )
+size_flags_horizontal = 9
+size_flags_vertical = 9
+custom_fonts/font = ExtResource( 14 )
+custom_styles/hover = SubResource( 34 )
+custom_styles/pressed = SubResource( 35 )
+custom_styles/focus = SubResource( 32 )
+custom_styles/normal = SubResource( 33 )
+icon = ExtResource( 15 )
+expand_icon = true
+
+[node name="Saves" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background" type="Panel" parent="Saves"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 37 )
+
+[node name="Back" type="Button" parent="Saves"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = -119.0
+margin_right = 295.0
+margin_bottom = -15.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
+text = "Back"
+
+[node name="Top" type="HBoxContainer" parent="Saves"]
+anchor_top = 0.03
+anchor_right = 1.0
+anchor_bottom = 0.152
+margin_top = 0.280001
+margin_bottom = -0.248009
+alignment = 1
+
+[node name="Title" type="Label" parent="Saves/Top"]
+margin_left = 367.0
+margin_right = 1100.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 6 )
+text = "Saved Games"
+align = 1
+valign = 1
+
+[node name="SelectThing" type="ScrollContainer" parent="Saves"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -550.0
+margin_top = -262.5
+margin_right = 550.0
+margin_bottom = 262.5
+custom_styles/bg = SubResource( 25 )
+
+[node name="Container" type="VBoxContainer" parent="Saves/SelectThing"]
+margin_right = 1100.0
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="Settings/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="Settings/ShowNumbersOnDice/CheckBox" to="." method="_on_ShowNumbersOnDiceCheckBox_pressed"]
+[connection signal="pressed" from="Create/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="Create/ButtonsRowOne/CreateNew" to="." method="_on_CreateNew_pressed"]
+[connection signal="pressed" from="Create/ButtonsRowOne/ModifyExisting" to="." method="_on_ModifyExisting_pressed"]
+[connection signal="pressed" from="Create/ButtonsRowTwo/ManageLevels" to="." method="_on_ManageLevels_pressed"]
+[connection signal="pressed" from="Create/ButtonsRowTwo/ImportLevel" to="." method="_on_ImportLevel_pressed"]
+[connection signal="pressed" from="ModifyExisting/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="ModifyExisting/Save" to="." method="_on_SaveModified_pressed"]
+[connection signal="pressed" from="Manage/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="Import/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="Import/Import" to="." method="_on_Import_pressed"]
+[connection signal="pressed" from="CreateNew/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="CreateNew/Add" to="CreateNew/LayoutCreator" method="Add"]
+[connection signal="pressed" from="Main/Middle/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Main/Middle/Create" to="." method="_on_Create_pressed"]
+[connection signal="pressed" from="Main/Middle/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="Play/Middle/DiceOnly" to="." method="_on_DiceOnly_pressed"]
+[connection signal="pressed" from="Play/Middle/VirtualDice" to="." method="_on_VirtualDice_pressed"]
+[connection signal="pressed" from="Play/Middle/Normal" to="." method="_on_Normal_pressed"]
+[connection signal="pressed" from="Play/PlaySaved" to="." method="_on_PlaySaved_pressed"]
+[connection signal="pressed" from="Play/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="DiceOnly/BackToPlay" to="." method="_on_BackToPlay_pressed"]
+[connection signal="pressed" from="VirtualDice/BackToPlay" to="." method="_on_BackToPlay_pressed"]
+[connection signal="pressed" from="Normal/BackToPlay" to="." method="_on_BackToPlay_pressed"]
+[connection signal="pressed" from="Fullscreen" to="." method="_on_Fullscreen_pressed"]
+[connection signal="pressed" from="Saves/Back" to="." method="_on_Back_pressed"]

@@ -1,0 +1,119 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Fonts/40-Font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scripts/CreatorData.gd" type="Script" id=2]
+[ext_resource path="res://Fonts/30-Font.tres" type="DynamicFont" id=3]
+
+[node name="CreatorData" type="VBoxContainer"]
+margin_right = 1046.0
+margin_bottom = 104.0
+size_flags_horizontal = 3
+script = ExtResource( 2 )
+
+[node name="Color" type="Control" parent="."]
+margin_right = 1046.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Color"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="Color/HBoxContainer"]
+margin_top = 4.0
+margin_right = 839.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Color"
+valign = 1
+
+[node name="Button" type="Button" parent="Color/HBoxContainer"]
+margin_left = 843.0
+margin_right = 1046.0
+margin_bottom = 50.0
+text = "                             "
+
+[node name="ColorPicker" type="ColorPicker" parent="."]
+visible = false
+margin_top = 54.0
+margin_right = 1046.0
+margin_bottom = 554.0
+rect_min_size = Vector2( 0, 500 )
+color = Color( 0.52549, 0.0901961, 0.0901961, 1 )
+edit_alpha = false
+presets_enabled = false
+presets_visible = false
+
+[node name="Count" type="Control" parent="."]
+margin_top = 54.0
+margin_right = 1046.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Count"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="Count/HBoxContainer"]
+margin_top = 4.0
+margin_right = 888.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Count"
+valign = 1
+
+[node name="Less" type="Button" parent="Count/HBoxContainer"]
+margin_left = 892.0
+margin_right = 941.0
+margin_bottom = 50.0
+text = "  <  "
+
+[node name="Label2" type="Label" parent="Count/HBoxContainer"]
+margin_left = 945.0
+margin_top = 4.0
+margin_right = 993.0
+margin_bottom = 45.0
+custom_fonts/font = ExtResource( 1 )
+text = "11"
+valign = 1
+
+[node name="More" type="Button" parent="Count/HBoxContainer"]
+margin_left = 997.0
+margin_right = 1046.0
+margin_bottom = 50.0
+text = "  >  "
+
+[node name="CustomNumbers" type="Control" parent="."]
+margin_top = 108.0
+margin_right = 1046.0
+margin_bottom = 158.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CustomNumbers"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="CustomNumbers/HBoxContainer"]
+margin_top = 4.0
+margin_right = 384.0
+margin_bottom = 45.0
+custom_fonts/font = ExtResource( 1 )
+text = "Custom Numbers"
+valign = 1
+
+[node name="TextEdit" type="TextEdit" parent="CustomNumbers/HBoxContainer"]
+margin_left = 388.0
+margin_right = 1046.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 30 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+caret_blink = true
+
+[connection signal="pressed" from="Color/HBoxContainer/Button" to="." method="_on_ColorPicker_pressed"]
+[connection signal="color_changed" from="ColorPicker" to="." method="_on_ColorPicker_color_changed"]
+[connection signal="pressed" from="Count/HBoxContainer/Less" to="." method="_on_CountLess_pressed"]
+[connection signal="pressed" from="Count/HBoxContainer/More" to="." method="_on_CountMore_pressed"]
+[connection signal="text_changed" from="CustomNumbers/HBoxContainer/TextEdit" to="." method="_on_CustomNumberstext_changed"]
