@@ -1,0 +1,140 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Themes/light.tres" type="Theme" id=1]
+[ext_resource path="res://Scripts/VirtualDice.gd" type="Script" id=2]
+[ext_resource path="res://Fonts/80-Font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Prefabs/Dice.tscn" type="PackedScene" id=4]
+[ext_resource path="res://SheetTemplates/normal.tres" type="Resource" id=5]
+[ext_resource path="res://Fonts/30-Font.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Scenes/QuixxPaperScene.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Themes/elements/u.WhiteRounded.tres" type="StyleBox" id=8]
+[ext_resource path="res://Textures/fullscreen.png" type="Texture" id=9]
+[ext_resource path="res://Fonts/150-Font.tres" type="DynamicFont" id=10]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.737255, 0.737255, 0.737255, 1 )
+corner_radius_top_right = 50
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.470588, 0.470588, 0.470588, 1 )
+corner_radius_top_right = 50
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.92549, 0.109804, 0.141176, 1 )
+corner_radius_top_right = 50
+expand_margin_left = 1.0
+expand_margin_right = 1.0
+expand_margin_top = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.92549, 0.109804, 0.141176, 1 )
+corner_radius_top_right = 50
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.737255, 0.737255, 0.737255, 1 )
+corner_radius_top_left = 50
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.470588, 0.470588, 0.470588, 1 )
+corner_radius_top_left = 50
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.109804, 0.52549, 0.92549, 1 )
+corner_radius_top_left = 50
+expand_margin_left = 1.0
+expand_margin_right = 1.0
+expand_margin_top = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.109804, 0.52549, 0.92549, 1 )
+corner_radius_top_left = 50
+
+[node name="VirtualDice" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+railTemplate = ExtResource( 5 )
+diceStyleBoxTemplate = ExtResource( 8 )
+
+[node name="Sheet" parent="." instance=ExtResource( 7 )]
+anchor_bottom = 0.867
+margin_bottom = -0.40802
+showBackButton = false
+
+[node name="Dices" type="HBoxContainer" parent="."]
+anchor_top = 0.867
+anchor_right = 0.911
+anchor_bottom = 1.0
+margin_top = -0.40802
+margin_right = 1337.56
+margin_bottom = 110.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Back" type="Button" parent="Dices"]
+margin_right = 220.0
+margin_bottom = 220.0
+rect_min_size = Vector2( 220, 220 )
+rect_pivot_offset = Vector2( 1146, 259 )
+size_flags_horizontal = 9
+size_flags_vertical = 9
+custom_fonts/font = ExtResource( 10 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 1 )
+text = "<"
+icon_align = 1
+expand_icon = true
+
+[node name="Dice" parent="Dices" instance=ExtResource( 4 )]
+margin_left = 224.0
+margin_top = 10.0
+margin_right = 424.0
+margin_bottom = 210.0
+
+[node name="Dice2" parent="Dices" instance=ExtResource( 4 )]
+margin_left = 428.0
+margin_top = 10.0
+margin_right = 628.0
+margin_bottom = 210.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -110.0
+mouse_filter = 2
+alignment = 2
+
+[node name="DiceButton" type="Button" parent="HBoxContainer"]
+margin_left = 1342.0
+margin_right = 1467.0
+margin_bottom = 110.0
+rect_min_size = Vector2( 125, 0 )
+theme = ExtResource( 1 )
+custom_fonts/font = ExtResource( 6 )
+text = "Dice"
+
+[node name="Fullscreen" type="Button" parent="HBoxContainer"]
+visible = false
+margin_left = 1357.0
+margin_right = 1467.0
+margin_bottom = 110.0
+rect_min_size = Vector2( 110, 110 )
+rect_pivot_offset = Vector2( 1146, 259 )
+size_flags_horizontal = 9
+size_flags_vertical = 9
+custom_fonts/font = ExtResource( 3 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+icon = ExtResource( 9 )
+expand_icon = true
+
+[connection signal="pressed" from="Dices/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="HBoxContainer/DiceButton" to="." method="dice"]
+[connection signal="pressed" from="HBoxContainer/Fullscreen" to="." method="_on_Fullscreen_pressed"]

@@ -1,0 +1,131 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "ScrollContainer",
+"class": "LayoutCreator",
+"language": "GDScript",
+"path": "res://Scripts/LayoutCreator.gd"
+}, {
+"base": "Control",
+"class": "Main",
+"language": "GDScript",
+"path": "res://Scripts/Main.gd"
+}, {
+"base": "Resource",
+"class": "RailEntryCreatorData",
+"language": "GDScript",
+"path": "res://Scripts/RailEntryCreatorData.gd"
+}, {
+"base": "Resource",
+"class": "RailTemplate",
+"language": "GDScript",
+"path": "res://Scripts/RailTemplate.gd"
+}, {
+"base": "Resource",
+"class": "RailTemplateData",
+"language": "GDScript",
+"path": "res://Scripts/RailTemplateData.gd"
+}, {
+"base": "Resource",
+"class": "SaveState",
+"language": "GDScript",
+"path": "res://Scripts/SaveState.gd"
+}, {
+"base": "Control",
+"class": "Sheet",
+"language": "GDScript",
+"path": "res://Scripts/Sheet.gd"
+}, {
+"base": "Button",
+"class": "ValueButton",
+"language": "GDScript",
+"path": "res://Scripts/ValueButton.gd"
+}, {
+"base": "Button",
+"class": "ValueMinus",
+"language": "GDScript",
+"path": "res://Scripts/ValueMinus.gd"
+} ]
+_global_script_class_icons={
+"LayoutCreator": "",
+"Main": "",
+"RailEntryCreatorData": "",
+"RailTemplate": "",
+"RailTemplateData": "",
+"SaveState": "",
+"Sheet": "",
+"ValueButton": "",
+"ValueMinus": ""
+}
+
+[application]
+
+config/name="Quixx"
+run/main_scene="res://Scenes/Main.tscn"
+boot_splash/image="res://Textures/GameCodesLogo.png"
+boot_splash/bg_color=Color( 0.141176, 0.141176, 0.141176, 1 )
+config/icon="res://Icons/icon.png"
+config/windows_native_icon="res://Icons/icon.ico"
+config/quit_on_go_back=false
+
+[display]
+
+window/size/width=1467
+window/size/height=824
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PoolStringArray(  )
+
+[global]
+
+window=false
+window#=false
+icon=true
+import=false
+background=false
+fallback=false
+theme=false
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+theme/custom="res://Themes/light.tres"
+
+[gui_transitions]
+
+config/default/auto_start=true
+config/default/fade_layout=true
+config/default/center_pivot=true
+config/default/duration=0.5
+config/default/delay=0.5
+config/default/transition_type="QUAD"
+config/default/ease_type="IN_OUT"
+config/default/animation_enter=4
+config/default/animation_leave=4
+
+[mono]
+
+project/assembly_name="QuixxRefactor"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+quality/driver/fallback_to_gles2=true
+vram_compression/import_etc=true
+vram_compression/import_pvrtc=true
+environment/default_environment="res://default_env.tres"

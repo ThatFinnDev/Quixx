@@ -1,0 +1,141 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Themes/light.tres" type="Theme" id=1]
+[ext_resource path="res://Scripts/Dicing.gd" type="Script" id=2]
+[ext_resource path="res://Fonts/80-Font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Prefabs/Dice.tscn" type="PackedScene" id=4]
+[ext_resource path="res://SheetTemplates/normal.tres" type="Resource" id=5]
+[ext_resource path="res://Fonts/256-Font.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Textures/fullscreen.png" type="Texture" id=7]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 0.94902, 0.94902, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.737255, 0.737255, 0.737255, 1 )
+corner_radius_top_right = 50
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.470588, 0.470588, 0.470588, 1 )
+corner_radius_top_right = 50
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.92549, 0.109804, 0.141176, 1 )
+corner_radius_top_right = 50
+expand_margin_left = 1.0
+expand_margin_right = 1.0
+expand_margin_top = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.92549, 0.109804, 0.141176, 1 )
+corner_radius_top_right = 50
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.737255, 0.737255, 0.737255, 1 )
+corner_radius_top_left = 50
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.470588, 0.470588, 0.470588, 1 )
+corner_radius_top_left = 50
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.109804, 0.52549, 0.92549, 1 )
+corner_radius_top_left = 50
+expand_margin_left = 1.0
+expand_margin_right = 1.0
+expand_margin_top = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.109804, 0.52549, 0.92549, 1 )
+corner_radius_top_left = 50
+
+[node name="Dices" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+useNumbers = false
+railTemplate = ExtResource( 5 )
+diceStyleBoxTemplate = SubResource( 1 )
+
+[node name="Grid" type="GridContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.835
+margin_left = 50.0
+margin_top = 50.0
+margin_right = -50.0
+margin_bottom = -0.039978
+custom_constants/vseparation = 15
+custom_constants/hseparation = 15
+columns = 6
+
+[node name="Dice" parent="Grid" instance=ExtResource( 4 )]
+margin_right = 200.0
+margin_bottom = 200.0
+
+[node name="Dice2" parent="Grid" instance=ExtResource( 4 )]
+margin_left = 215.0
+margin_right = 415.0
+margin_bottom = 200.0
+
+[node name="DiceButton" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -151.5
+margin_top = -119.0
+margin_right = 1056.5
+margin_bottom = 299.0
+rect_scale = Vector2( 0.25, 0.25 )
+theme = ExtResource( 1 )
+custom_fonts/font = ExtResource( 6 )
+text = "Dice"
+
+[node name="Back" type="Button" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -110.0
+margin_right = 110.0
+rect_min_size = Vector2( 110, 0 )
+rect_pivot_offset = Vector2( 1146, 259 )
+size_flags_horizontal = 9
+size_flags_vertical = 9
+custom_fonts/font = ExtResource( 3 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "<"
+icon_align = 1
+expand_icon = true
+
+[node name="Fullscreen" type="Button" parent="."]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -110.0
+margin_top = -110.0
+rect_min_size = Vector2( 110, 0 )
+rect_pivot_offset = Vector2( 1146, 259 )
+size_flags_horizontal = 9
+size_flags_vertical = 9
+custom_fonts/font = ExtResource( 3 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
+icon = ExtResource( 7 )
+expand_icon = true
+
+[connection signal="pressed" from="DiceButton" to="." method="dice"]
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="Fullscreen" to="." method="_on_Fullscreen_pressed"]

@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Fonts/40-Font.tres" type="DynamicFont" id=1]
+
+[node name="ManageEntry" type="HBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 75 )
+
+[node name="Label" type="Label" parent="."]
+margin_top = 391.0
+margin_right = 1146.0
+margin_bottom = 432.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "<LevelName>"
+valign = 1
+
+[node name="Button" type="Button" parent="."]
+margin_left = 1150.0
+margin_right = 1309.0
+margin_bottom = 824.0
+text = "  Remove  "
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 1313.0
+margin_right = 1467.0
+margin_bottom = 824.0
+text = "  Export  "
