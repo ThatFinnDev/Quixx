@@ -619,16 +619,16 @@ anchor_bottom = 1.0
 margin_top = -50.0
 
 [node name="Label" type="Label" parent="Main/HBoxContainer"]
-margin_right = 271.0
+margin_right = 276.0
 margin_bottom = 50.0
 custom_fonts/font = ExtResource( 3 )
-text = "Ver: 1.4.7"
+text = "Ver: 1.4.8"
 valign = 2
 
 [node name="Latest" type="Label" parent="Main/HBoxContainer"]
-margin_left = 275.0
+margin_left = 280.0
 margin_top = 10.0
-margin_right = 275.0
+margin_right = 280.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 0, 30 )
 custom_fonts/font = ExtResource( 13 )
