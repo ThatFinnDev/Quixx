@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Prefabs/ValueEntry.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Fonts/noFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Textures/lock.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 150
+corner_radius_top_right = 150
+corner_radius_bottom_right = 150
+corner_radius_bottom_left = 150
+corner_detail = 20
+
+[node name="ValueBackground" instance=ExtResource( 1 )]
+
+[node name="ValueEntry" parent="." index="0"]
+custom_styles/panel = SubResource( 1 )
+
+[node name="Button" parent="ValueEntry/WorkArea" index="0"]
+custom_fonts/font = ExtResource( 2 )
+icon = ExtResource( 3 )
+
+[node name="steigend" parent="ValueEntry/WorkArea/Button/Cross" index="0"]
+margin_left = 30.0
+margin_top = -45.0001
+margin_right = 50.0
+margin_bottom = 47.9999
+
+[node name="fallend" parent="ValueEntry/WorkArea/Button/Cross" index="1"]
+margin_left = -34.0
+margin_top = -31.0001
+margin_right = -14.0
+margin_bottom = 62.9999

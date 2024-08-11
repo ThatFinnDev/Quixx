@@ -1,0 +1,66 @@
+[gd_resource type="Theme" load_steps=14 format=2]
+
+[ext_resource path="res://Themes/elements/a.CheckBoxHover.tres" type="StyleBox" id=1]
+[ext_resource path="res://Fonts/30-Font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Themes/elements/a.CheckBox.tres" type="StyleBox" id=3]
+[ext_resource path="res://Themes/elements/l.RoundedPanel-Normal.tres" type="StyleBox" id=4]
+[ext_resource path="res://Themes/elements/l.RoundedPanel-Focus.tres" type="StyleBox" id=5]
+[ext_resource path="res://Fonts/noFont.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Themes/elements/l.RoundedPanel-Hover.tres" type="StyleBox" id=7]
+[ext_resource path="res://Themes/elements/l.RoundedPanel-Pressed.tres" type="StyleBox" id=8]
+[ext_resource path="res://Bungee-Regular.ttf" type="DynamicFontData" id=9]
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.627451, 0.627451, 0.627451, 1 )
+corner_radius_top_left = 45
+corner_radius_top_right = 45
+corner_radius_bottom_right = 45
+corner_radius_bottom_left = 45
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+font_data = ExtResource( 9 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.294118, 0.294118, 0.294118, 0.356863 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[resource]
+Button/colors/font_color = Color( 0, 0, 0, 1 )
+Button/colors/font_color_disabled = Color( 0, 0, 0, 0 )
+Button/colors/font_color_focus = Color( 0, 0, 0, 1 )
+Button/colors/font_color_hover = Color( 0, 0, 0, 1 )
+Button/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+Button/fonts/font = ExtResource( 2 )
+Button/styles/disabled = SubResource( 5 )
+Button/styles/focus = ExtResource( 7 )
+Button/styles/hover = ExtResource( 7 )
+Button/styles/normal = ExtResource( 4 )
+Button/styles/pressed = ExtResource( 8 )
+CheckBox/fonts/font = ExtResource( 6 )
+CheckBox/styles/disabled = ExtResource( 3 )
+CheckBox/styles/focus = ExtResource( 1 )
+CheckBox/styles/hover = ExtResource( 1 )
+CheckBox/styles/hover_pressed = ExtResource( 1 )
+CheckBox/styles/normal = ExtResource( 3 )
+CheckBox/styles/pressed = ExtResource( 3 )
+MenuButton/styles/disabled = null
+MenuButton/styles/focus = ExtResource( 5 )
+MenuButton/styles/hover = ExtResource( 7 )
+MenuButton/styles/normal = ExtResource( 8 )
+MenuButton/styles/pressed = ExtResource( 4 )
+PopupMenu/colors/font_color = Color( 0, 0, 0, 1 )
+PopupMenu/colors/font_color_hover = Color( 0.196078, 0.196078, 0.196078, 1 )
+PopupMenu/fonts/font = SubResource( 3 )
+PopupMenu/styles/hover = SubResource( 4 )
+PopupMenu/styles/panel = SubResource( 2 )
